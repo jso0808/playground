@@ -23,7 +23,7 @@ public class Ex17478 {
 	}
 		
 	public static void recurr(int cnt) {
-		if(cnt==0) {
+		if(cnt==0) { 
 			System.out.print(underbar+"\"재귀함수가 뭔가요?\"\n");
 			System.out.print(underbar+"\"재귀함수는 자기 자신을 호출하는 함수라네\"\n");
 			System.out.print(underbar+"라고 답변하였지.\n");
