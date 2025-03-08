@@ -1,4 +1,4 @@
-package src.main.java.programmers.붕대감기;
+package src.main.java.programmers;
 
 public class Ex250137 {
 
