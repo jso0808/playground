@@ -15,8 +15,7 @@ public class SynchronizedStudy {
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
-                // this.count++; // 동시성 보장 X  
-                plusCount();    // synchronized 키워드로 동시성 보장
+                plusCount();
             }).start();
         }
 
