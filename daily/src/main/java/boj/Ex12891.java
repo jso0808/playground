@@ -23,7 +23,7 @@ public class Ex12891 {
         int length = Integer.parseInt(st.nextToken());
         int partSize = Integer.parseInt(st.nextToken());
         String str = String.valueOf(br.readLine());
-        int[] fitArray = inputFirArray(br);
+        int[] fitArray = inputFitArray(br);
 
         int[] countArray = new int[4];
         //  {‘A’, ‘C’, ‘G’, ‘T’}
@@ -49,7 +49,7 @@ public class Ex12891 {
         }
     }
 
-    private int[] inputFirArray(BufferedReader br) throws IOException {
+    private int[] inputFitArray(BufferedReader br) throws IOException {
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int[] fitArray = new int[4];
