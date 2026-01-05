@@ -1,8 +1,6 @@
 package boj;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
@@ -19,11 +17,12 @@ public class Ex11003 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
         int N = Integer.parseInt(st.nextToken());
         int L = Integer.parseInt(st.nextToken());
         st = new StringTokenizer(br.readLine());
 
-        int[] result = new int[N];
 
         Deque<Node> deque = new LinkedList<>();
 
@@ -43,12 +42,11 @@ public class Ex11003 {
                 deque.removeFirst();
             }
 
-            result[i] = deque.getFirst().value;
+           bw.write(deque.getFirst().value + " ");
         }
 
-        for (int i : result) {
-            System.out.print(i + " ");
-        }
+        bw.flush();
+        bw.close();
     }
 
 
