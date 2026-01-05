@@ -9,8 +9,9 @@ import java.util.StringTokenizer;
 
 public class Ex11003 {
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException {
+        Ex11003 ex11003 = new Ex11003();
+        ex11003.solve();
     }
 
 
@@ -22,16 +23,14 @@ public class Ex11003 {
         int L = Integer.parseInt(st.nextToken());
         st = new StringTokenizer(br.readLine());
 
-//        int[] inputArray = inputArray(br, N);
-
-        int[] result = new int[N]; // result
+        int[] result = new int[N];
 
         Deque<Node> deque = new LinkedList<>();
 
         for(int i=0; i<N; i++) {
             int now = Integer.parseInt(st.nextToken());
 
-            // 덱이 있으면서 now가 last보다 작으면 last remove
+            // 덱 마지막에서부터 now보다 큰 노드는 제거
             while(! deque.isEmpty() && deque.getLast().value > now) {
                 deque.removeLast();
             }
@@ -39,16 +38,17 @@ public class Ex11003 {
             // now를 last add
             deque.addLast(new Node(i, now));
 
-            // 덱에서 인덱스를 벗어난 것들 덱에서 제거. formula 적용한 범위만 남겨야함! i-L+1 ~ i;
+            // 덱에서 인덱스를 벗어난 것들 덱에서 제거. formula 적용한 범위만 남겨야함! i-L+1 < inedx < i;
             if(deque.getFirst().index < i-L+1) {
                 deque.removeFirst();
             }
 
-            // 덱의 첫번째 값 출력
             result[i] = deque.getFirst().value;
         }
 
-
+        for (int i : result) {
+            System.out.print(i + " ");
+        }
     }
 
 
